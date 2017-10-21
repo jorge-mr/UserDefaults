@@ -62,7 +62,7 @@
                                                     <constraint firstAttribute="width" constant="100" id="5Wh-1v-ye4"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                                <state key="normal" title="Get Last">
+                                                <state key="normal" title="Get">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
@@ -97,17 +97,60 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="11h-1I-4b2">
-                                <rect key="frame" x="50" y="384.5" width="220" height="30"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="N6r-X3-5rI">
+                                <rect key="frame" x="50" y="384.5" width="220" height="75"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kDi-nc-snD">
-                                        <rect key="frame" x="0.0" y="0.0" width="100" height="30"/>
-                                        <color key="backgroundColor" red="0.84959762837643316" green="0.68490932296783136" blue="0.26738752830556156" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="11h-1I-4b2">
+                                        <rect key="frame" x="0.0" y="0.0" width="220" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kDi-nc-snD">
+                                                <rect key="frame" x="0.0" y="0.0" width="100" height="30"/>
+                                                <color key="backgroundColor" red="0.84959762837643316" green="0.68490932296783136" blue="0.26738752830556156" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="100" id="Zo3-XS-kS6"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                <state key="normal" title="Previous">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <integer key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="previousEmoji:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sMY-5l-Tng"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uFt-EI-Js9">
+                                                <rect key="frame" x="120" y="0.0" width="100" height="30"/>
+                                                <color key="backgroundColor" red="0.22433271518432138" green="0.84959762837643316" blue="0.62301024454753939" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="100" id="3SV-Hs-1A0"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                <state key="normal" title="Next">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <integer key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="nextEmoji:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6Ul-AL-qr3"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uay-rY-7qC">
+                                        <rect key="frame" x="60" y="45" width="100" height="30"/>
+                                        <color key="backgroundColor" red="0.86933487649999996" green="0.35546338560000001" blue="0.28692495820000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="100" id="Zo3-XS-kS6"/>
+                                            <constraint firstAttribute="width" constant="100" id="drD-hs-LMa"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                        <state key="normal" title="Previous">
+                                        <state key="normal" title="Delete">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -116,26 +159,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="previousEmoji:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sMY-5l-Tng"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uFt-EI-Js9">
-                                        <rect key="frame" x="120" y="0.0" width="100" height="30"/>
-                                        <color key="backgroundColor" red="0.22433271518432138" green="0.84959762837643316" blue="0.62301024454753939" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="100" id="3SV-Hs-1A0"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                        <state key="normal" title="Next">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <integer key="value" value="5"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="nextEmoji:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6Ul-AL-qr3"/>
+                                            <action selector="DeleteEmoji:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dis-qJ-A44"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -145,17 +169,18 @@
                         <constraints>
                             <constraint firstItem="0jg-iw-goF" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.8" id="BkJ-lO-TuJ"/>
                             <constraint firstItem="YZZ-li-E6m" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="35" id="EOx-f5-MCY"/>
+                            <constraint firstItem="N6r-X3-5rI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Kne-ov-5sM"/>
                             <constraint firstItem="YZZ-li-E6m" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Nfx-Gp-ivj"/>
                             <constraint firstItem="0jg-iw-goF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Oi7-Jc-UGc"/>
                             <constraint firstItem="0jg-iw-goF" firstAttribute="top" secondItem="OGh-08-OmQ" secondAttribute="bottom" constant="10" id="V4i-Fw-AI6"/>
                             <constraint firstItem="OGh-08-OmQ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="XPs-z2-xVp"/>
                             <constraint firstItem="OGh-08-OmQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="erj-JD-ISO"/>
-                            <constraint firstItem="11h-1I-4b2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fhf-xs-Jbf"/>
-                            <constraint firstItem="11h-1I-4b2" firstAttribute="top" secondItem="0jg-iw-goF" secondAttribute="bottom" constant="20" id="gY1-ls-DlL"/>
+                            <constraint firstItem="N6r-X3-5rI" firstAttribute="top" secondItem="0jg-iw-goF" secondAttribute="bottom" constant="20" id="uQb-Df-MHM"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="deleteButton" destination="uay-rY-7qC" id="P5j-b4-w6R"/>
                         <outlet property="descriptionLabel" destination="0jg-iw-goF" id="vc6-UI-ak4"/>
                         <outlet property="descriptionTextField" destination="AIk-FV-iFv" id="DWr-PP-WCx"/>
                         <outlet property="emojiLabel" destination="OGh-08-OmQ" id="8gV-mL-MCn"/>

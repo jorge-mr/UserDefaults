@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var previousButton: UIButton!
+    @IBOutlet weak var deleteButton: UIButton!
     var index = 0
     var myEmojis : [[String]]!
     override func viewDidLoad() {
@@ -24,6 +25,8 @@ class ViewController: UIViewController {
         descriptionLabel.text = ""
         nextButton.alpha = 0.0
         previousButton.alpha = 0.0
+        deleteButton.isHidden = true
+        UserDefaults.standard.set([["🐉","Dragon"],["🐝","Bee"],["🦄","Unicorn"],["🐯","Tiger"]], forKey: "emoji")
     }
 
     override func didReceiveMemoryWarning() {
@@ -42,8 +45,15 @@ class ViewController: UIViewController {
                 UserDefaults.standard.set([newEmoji], forKey: "emoji")
                 print("emoji guardado correctamente")
             }
-        }else {
-            print("ingresa todos los campos")
+            emojiTextField.text = ""
+            descriptionTextField.text = ""
+        } else {
+            let okAlert = UIAlertAction(title: "Ok", style: .default, handler: nil)
+            let cancelAlert = UIAlertAction(title: "Cancel", style: .destructive, handler: nil)
+            let alertController = UIAlertController(title: "Something went wrong", message: "Fill all fields", preferredStyle: .alert)
+            alertController.addAction(okAlert)
+            alertController.addAction(cancelAlert)
+            present(alertController, animated: true, completion: nil)
         }
     }
     
@@ -55,6 +65,14 @@ class ViewController: UIViewController {
             descriptionLabel.text = myEmojis[index][1]
             nextButton.alpha = 1.0
             previousButton.alpha = 1.0
+            deleteButton.isHidden = false
+        } else {
+            let okAlert = UIAlertAction(title: "Ok", style: .default, handler: nil)
+            let cancelAlert = UIAlertAction(title: "Cancel", style: .destructive, handler: nil)
+            let alertController = UIAlertController(title: "There is no emojis", message: "Save new emojis", preferredStyle: .alert)
+            alertController.addAction(okAlert)
+            alertController.addAction(cancelAlert)
+            present(alertController, animated: true, completion: nil)
         }
     }
     
@@ -73,6 +91,29 @@ class ViewController: UIViewController {
             descriptionLabel.text = myEmojis[index][1]
         }
     }
+    
+    @IBAction func DeleteEmoji(_ sender: UIButton) {
+        if myEmojis.count == 1 {
+            UserDefaults.standard.removeObject(forKey: "emoji")
+            emojiLabel.text = ""
+            descriptionLabel.text = ""
+            nextButton.alpha = 0.0
+            previousButton.alpha = 0.0
+            deleteButton.isHidden = true
+        } else if index == myEmojis.count - 1 {
+            myEmojis.remove(at: index)
+            index -= 1
+            emojiLabel.text = myEmojis[index][0]
+            descriptionLabel.text = myEmojis[index][1]
+            UserDefaults.standard.set(myEmojis, forKey: "emoji")
+        } else {
+            myEmojis.remove(at: index)
+            emojiLabel.text = myEmojis[index][0]
+            descriptionLabel.text = myEmojis[index][1]
+            UserDefaults.standard.set(myEmojis, forKey: "emoji")
+        }
+    }
+    
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
