@@ -17,8 +17,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var previousButton: UIButton!
     @IBOutlet weak var deleteButton: UIButton!
+    
     var index = 0
     var myEmojis : [[String]]!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         emojiLabel.text = ""
@@ -26,7 +28,6 @@ class ViewController: UIViewController {
         nextButton.alpha = 0.0
         previousButton.alpha = 0.0
         deleteButton.isHidden = true
-        UserDefaults.standard.set([["🐉","Dragon"],["🐝","Bee"],["🦄","Unicorn"],["🐯","Tiger"]], forKey: "emoji")
     }
 
     override func didReceiveMemoryWarning() {
