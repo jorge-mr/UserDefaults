@@ -20,6 +20,7 @@ class ViewController: UIViewController {
     
     var index = 0
     var myEmojis : [[String]]!
+    var newProperty: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -118,6 +119,10 @@ class ViewController: UIViewController {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
+    }
+    
+    func newFunc() {
+        
     }
     
 }
