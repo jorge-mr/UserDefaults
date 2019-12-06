@@ -122,7 +122,11 @@ class ViewController: UIViewController {
     }
     
     func newFunc() {
-        
+        print("newFunc")
+        print("newFunc")
+        print("newFunc")
+        print("newFunc")
+        print("newFunc")
     }
     
 }
